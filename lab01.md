@@ -1,5 +1,5 @@
 ---
-layout: 123
+layout: 18342138
 title: 先给自己定个小目标？ 
 --- 
 <font size="10">先给自己定个小目标？</font><br /> 
