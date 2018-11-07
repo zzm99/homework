@@ -26,7 +26,9 @@
 
 #### 任务一：简单程序：
 
-![](images/renwu1.jpg)    
+![](images/renwu1.jpg)
+![](images/no1.jpg)
+![](images/no1+.jpg)
 
 观察并回答下面问题：      
 PC，IR 寄存器的作用。       
@@ -71,6 +73,8 @@ int z = x + w;
 #### 任务 2：简单循环
 
 ![](images/renwu2.jpg)    
+![](images/no2.jpg)
+![](images/no2+.jpg)
 
 输入程序Program 2，运行并回答问题：
 
