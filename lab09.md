@@ -3,10 +3,14 @@
 
 **“自顶向下 逐步求精”** 的编程方法又称为Top-Down Design， 我们可以从维基百科上了解到它的定义为“ Top–down design is focused on high-level functional requirements, with relatively less focus on existing implementation technology. ”			
 
-#### 其实，这种编程思想就是：			
-• Breaking the problem into a set of subproblems called modules			
-• Creating a hierarchical structure of problems and subproblems (modules)				
-先**自顶向下**分析将大问题分解为几个小问题					
+#### 其实，这种编程思想就是：	
+
+• Breaking the problem into a set of subproblems called modules	
+
+• Creating a hierarchical structure of problems and subproblems (modules)	
+
+先**自顶向下**分析将大问题分解为几个小问题				
+
 然后针对每一部分进行**逐步求精**，完善细节						
 
 #### 下面我们以洗衣机为例用“自顶向下 逐步求精”的编程思想对洗衣机的程序设计进行分析：		
