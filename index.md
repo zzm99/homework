@@ -2,13 +2,13 @@
 
 ## 课后作业
 
-1. [01-第三周：使用维基百科（Wikipedia）解释名词](hw01)
-2. [02-第四周：进制转换+解释名词](hw02)
-3. [03-第五周：找错误-解释-阅读](hw03)
-4. [04-第六周：解释-回答问题](hw04)
-5. [05-第七周：课后作业](hw05)
-6. [06-第八周：课后作业](hw06)
-7. [07-第九周：课后作业](hw07)
+1. [01-第三周：homework](hw01)
+2. [02-第四周：homework](hw02)
+3. [03-第五周：homework](hw03)
+4. [04-第六周：homework](hw04)
+5. [05-第七周：homework](hw05)
+6. [06-第八周：homework](hw06)
+7. [07-第九周：homework](hw07)
 ## 实验与实践
 
 1. [01-我的 Markdown 博客](lab01)   
@@ -27,11 +27,4 @@
 14. [14-IT风投之我见](lab14)
 15. [15-智能蛇实验报告](lab15)
 16. [16-互联网时代的盈利模式](lab16)
-
-
-### Markdown 语法演示
-
-![](images/exclamation.png) 语法 [demo 文档](demo)， [source](https://github.com/sysu-swi/homework/blob/gh-pages/demo.md)
-
-
 
