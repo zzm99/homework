@@ -60,7 +60,7 @@
 线代题目一：
 
 求解方程组：
-![](images/python11.jpg)
+![](images/python11.png)
 
 
 ![](images/python6.jpg)
