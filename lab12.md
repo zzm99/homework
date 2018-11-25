@@ -102,7 +102,7 @@ void one_Sort(int a[], int n, int exp)//exp用于分别进行个、十、百··
 	
 	//将数据出现的次数存储在buckets[]中
 	for(i = 0; i < n; i++)
-		buckets[(a[i]/exp)%10]++；
+		buckets[(a[i]/exp)%10]++;
 	
 	//更改buckets[]数组：为了让更改后buckets[i]的值就是该数据再output[]中的位置
 	for(i = 1; i < 10; i++)
