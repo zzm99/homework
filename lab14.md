@@ -342,7 +342,7 @@ void Create_Food()  //在地图上随机产生食物
  	while(1)  
  	{  
   		fx = rand()%H;  
-     	fy = rand()%W;     
+     		fy = rand()%W;     
   		if(GameMap[fx][fy] == ' ')  //不能出现在蛇所占有的位置  
   		{   
    			GameMap[fx][fy] = Sfood;  
