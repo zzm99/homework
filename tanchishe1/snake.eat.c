@@ -3,21 +3,21 @@
 #include <time.h>
 #include <string.h>
  
-#define H 10//µØÍ¼µÄ¸ß 
-#define W 10//µØÍ¼µÄ¿í
+#define H 10//åœ°å›¾çš„é«˜ 
+#define W 10//åœ°å›¾çš„å®½
 #define w 119
 #define a 97
 #define s 115
 #define d 100
-int i, j;//Ñ­»·±äÁ¿ 
-int sum = 5;//ÉßµÄ³¤¶È
-int over = 0;//ÓÎÏ·½áÊø±êÖ¾£¨×Ô³Ô»òÕßÅöÇ½£©
-int dx[4] = {0, 0, -1, 1}; //×óÓÒÒÆ¶¯
-int dy[4] = {-1, 1, 0, 0}; //ÉÏÏÂÒÆ¶¯
+int i, j;//å¾ªç¯å˜é‡ 
+int sum = 5;//è›‡çš„é•¿åº¦
+int over = 0;//æ¸¸æˆç»“æŸæ ‡å¿—ï¼ˆè‡ªåƒæˆ–è€…ç¢°å¢™ï¼‰
+int dx[4] = {0, 0, -1, 1}; //å·¦å³ç§»åŠ¨
+int dy[4] = {-1, 1, 0, 0}; //ä¸Šä¸‹ç§»åŠ¨
 
-struct Snake{//ÉßµÄÃ¿¸ö½áµãµÄÊı¾İÀàĞÍ 
+struct Snake{//è›‡çš„æ¯ä¸ªç»“ç‚¹çš„æ•°æ®ç±»å‹ 
 	int x, y;
-	int now;//±£´æµ±Ç°½áµãµÄ·½Ïò£¬0¡¢1¡¢2¡¢3·Ö±ğÎª×óÓÒÉÏÏÂ 
+	int now;//ä¿å­˜å½“å‰ç»“ç‚¹çš„æ–¹å‘ï¼Œ0ã€1ã€2ã€3åˆ†åˆ«ä¸ºå·¦å³ä¸Šä¸‹ 
 }Snake[H*W];
 
 const char Shead = 'H';
@@ -26,14 +26,14 @@ const char Sfood = '$';
 const char Snode = ' ';
 const char Swall = '*';
 
-void Initial();//µØÍ¼µÄ³õÊ¼»¯
-void Create_Food();//²úÉúÊ³Îï
-void Show(); //Ë¢ĞÂÏÔÊ¾µØÍ¼ 
-void Move(); //ÉßµÄÒÆ¶¯
-void Check_Border();//¼ì²éÉßÍ·ÊÇ·ñÔ½½ç
-void Check_Head(int x, int y); //¼ì²éÉßÍ·ÒÆ¶¯ºóµÄÇé¿ö
+void Initial();//åœ°å›¾çš„åˆå§‹åŒ–
+void Create_Food();//äº§ç”Ÿé£Ÿç‰©
+void Show(); //åˆ·æ–°æ˜¾ç¤ºåœ°å›¾ 
+void Move(); //è›‡çš„ç§»åŠ¨
+void Check_Border();//æ£€æŸ¥è›‡å¤´æ˜¯å¦è¶Šç•Œ
+void Check_Head(int x, int y); //æ£€æŸ¥è›‡å¤´ç§»åŠ¨åçš„æƒ…å†µ
 
-char GameMap[H][W];//ÓÎÏ·µØÍ¼ 
+char GameMap[H][W];//æ¸¸æˆåœ°å›¾ 
 
 int main()
 {
@@ -53,18 +53,18 @@ int main()
 			case s:	Snake[0].now = 3,Move();
 					break;
 		}	
-		if(over)  //×Ô³Ô»òÅöÇ½¼´ÓÎÏ·½áÊø  
+		if(over)  //è‡ªåƒæˆ–ç¢°å¢™å³æ¸¸æˆç»“æŸ  
   		{   
-   			printf("\n**ÓÎÏ·½áÊø**\n"); 
-			printf("ÄãµÄµÃ·ÖÎª£º%d",sum); 
+   			printf("\n**æ¸¸æˆç»“æŸ**\n"); 
+			printf("ä½ çš„å¾—åˆ†ä¸ºï¼š%d",sum); 
      		break;  
   		} 
   		if(sum == ((H-2)*(W-2)-1))
   		{
-  			printf("/nYou win!/n");//³Ôµ½Ã»µÃ³ÔÁË 
+  			printf("/nYou win!/n");//åƒåˆ°æ²¡å¾—åƒäº† 
   			break;
 		}
-  		system("cls");   //Çå¿ÕµØÍ¼ÔÙÏÔÊ¾Ë¢ĞÂºÃµÄµØÍ¼ 
+  		system("cls");   //æ¸…ç©ºåœ°å›¾å†æ˜¾ç¤ºåˆ·æ–°å¥½çš„åœ°å›¾ 
   		for(i = 0; i < H; i++)   
   		{   
    			for(j = 0; j < W; j++)  
@@ -99,7 +99,7 @@ void Initial()
 		Snake[i].y = i;
 		Snake[0].now = -1;
 	}
-	Create_Food();   //Ëæ»ú²úÉúÊ³Îï  
+	Create_Food();   //éšæœºäº§ç”Ÿé£Ÿç‰©  
 	for(i = 0; i < H; i++)
 	{
 		for(j = 0; j < W; j++)
@@ -108,69 +108,69 @@ void Initial()
 	}
 }
 
-void Check_Border()  //¼ì²éÉßÍ·ÊÇ·ñÔ½½ç  
+void Check_Border()  //æ£€æŸ¥è›‡å¤´æ˜¯å¦è¶Šç•Œ  
 {  
  	if(Snake[0].x < 0 || Snake[0].x >= H || Snake[0].y < 0 || Snake[0].y >= W)  
      	over = 1;  
 }  
 
-void Check_Head(int x, int y)  //¼ì²éÉßÍ·ÒÆ¶¯ºóµÄÎ»ÖÃÇé¿ö  
+void Check_Head(int x, int y)  //æ£€æŸ¥è›‡å¤´ç§»åŠ¨åçš„ä½ç½®æƒ…å†µ  
 {      
- 	if(GameMap[ Snake[0].x ][ Snake[0].y ] == ' ')  //Îª¿Õ  
+ 	if(GameMap[ Snake[0].x ][ Snake[0].y ] == ' ')  //ä¸ºç©º  
   		GameMap[ Snake[0].x ][ Snake[0].y ] = 'H';   
-  	else if(GameMap[ Snake[0].x ][ Snake[0].y ] == '$')  //ÎªÊ³Îï  
+  	else if(GameMap[ Snake[0].x ][ Snake[0].y ] == '$')  //ä¸ºé£Ÿç‰©  
   		{  
    			GameMap[ Snake[0].x ][ Snake[0].y ] = 'H';    
-   			Snake[sum].x = x;   //ĞÂÔö¼ÓµÄÉßÉíÎªÉßÍ·ºóÃæµÄÄÇ¸ö  
+   			Snake[sum].x = x;   //æ–°å¢åŠ çš„è›‡èº«ä¸ºè›‡å¤´åé¢çš„é‚£ä¸ª  
      		Snake[sum].y = y;  
     		Snake[sum].now = Snake[0].now;  
       	   	GameMap[ Snake[sum].x ][ Snake[sum].y ] = 'X';   
    			sum++;  
-   			Create_Food();  //Ê³Îï³ÔÍêÁËÂíÉÏÔÙ²úÉúÒ»¸öÊ³Îï  
+   			Create_Food();  //é£Ÿç‰©åƒå®Œäº†é©¬ä¸Šå†äº§ç”Ÿä¸€ä¸ªé£Ÿç‰©  
   		}  
   	else 
    		over = 1;  
 }
 
-void Move()   //ÉßµÄÒÆ¶¯  
+void Move()   //è›‡çš„ç§»åŠ¨  
 {  
  	int x, y;  
-    int t = sum;  //±£´æµ±Ç°ÉßµÄ³¤¶È  
- 	//¼ÇÂ¼µ±Ç°ÉßÍ·µÄÎ»ÖÃ,²¢ÉèÖÃÎª¿Õ,ÉßÍ·ÏÈÒÆ¶¯  
+    int t = sum;  //ä¿å­˜å½“å‰è›‡çš„é•¿åº¦  
+ 	//è®°å½•å½“å‰è›‡å¤´çš„ä½ç½®,å¹¶è®¾ç½®ä¸ºç©º,è›‡å¤´å…ˆç§»åŠ¨  
  	x = Snake[0].x;  y = Snake[0].y;  GameMap[x][y] = ' ';  
  	Snake[0].x = Snake[0].x + dx[ Snake[0].now ];  
  	Snake[0].y = Snake[0].y + dy[ Snake[0].now ];  
- 	Check_Border();   //ÉßÍ·ÊÇ·ñÔ½½ç  
- 	Check_Head(x, y);  //ÉßÍ·ÒÆ¶¯ºóµÄÎ»ÖÃÇé¿ö,²ÎÊıÎª: ÉßÍ·µÄ¿ªÊ¼Î»ÖÃ  
-	if(sum == t)  //Î´³Ôµ½Ê³Îï¼´ÉßÉíÒÆ¶¯Å¶  
-		for(i = 1; i < sum; i++)  //Òª´ÓÉßÎ²½ÚµãÏòÇ°ÒÆ¶¯Å¶,Ç°Ò»¸ö½Úµã×÷Îª²ÎÕÕ  
+ 	Check_Border();   //è›‡å¤´æ˜¯å¦è¶Šç•Œ  
+ 	Check_Head(x, y);  //è›‡å¤´ç§»åŠ¨åçš„ä½ç½®æƒ…å†µ,å‚æ•°ä¸º: è›‡å¤´çš„å¼€å§‹ä½ç½®  
+	if(sum == t)  //æœªåƒåˆ°é£Ÿç‰©å³è›‡èº«ç§»åŠ¨å“¦  
+		for(i = 1; i < sum; i++)  //è¦ä»è›‡å°¾èŠ‚ç‚¹å‘å‰ç§»åŠ¨å“¦,å‰ä¸€ä¸ªèŠ‚ç‚¹ä½œä¸ºå‚ç…§  
 	 	{  
-	  		if(i == 1)   //Î²½ÚµãÉèÖÃÎª¿ÕÔÙÒÆ¶¯  
+	  		if(i == 1)   //å°¾èŠ‚ç‚¹è®¾ç½®ä¸ºç©ºå†ç§»åŠ¨  
 	   			GameMap[ Snake[i].x ][ Snake[i].y ] = ' ';   
-	  		if(i == sum-1)  //ÎªÉßÍ·ºóÃæµÄÉßÉí½Úµã,ÌØÊâ´¦Àí  
+	  		if(i == sum-1)  //ä¸ºè›‡å¤´åé¢çš„è›‡èº«èŠ‚ç‚¹,ç‰¹æ®Šå¤„ç†  
 	  		{  
 	   			Snake[i].x = x;  
 	         	Snake[i].y = y;  
 	    		Snake[i].now = Snake[0].now;  
 	  		}  
-	  		else   //ÆäËûÉßÉí¼´×ßµ½Ç°Ò»¸öÉßÉíÎ»ÖÃ  
+	  		else   //å…¶ä»–è›‡èº«å³èµ°åˆ°å‰ä¸€ä¸ªè›‡èº«ä½ç½®  
 	  		{  
 	   			Snake[i].x = Snake[i+1].x;  
 	         	Snake[i].y = Snake[i+1].y;  
 	      		Snake[i].now = Snake[i+1].now;  
 	  		}	     
-	  		GameMap[ Snake[i].x ][ Snake[i].y ] = 'X'; //ÒÆ¶¯ºóÒªÖÃÎª'X'ÉßÉí   
+	  		GameMap[ Snake[i].x ][ Snake[i].y ] = 'X'; //ç§»åŠ¨åè¦ç½®ä¸º'X'è›‡èº«   
 	 	} 
 }  
 
-void Create_Food()  //ÔÚµØÍ¼ÉÏËæ»ú²úÉúÊ³Îï  
+void Create_Food()  //åœ¨åœ°å›¾ä¸Šéšæœºäº§ç”Ÿé£Ÿç‰©  
 {  
  	int fx, fy;  
  	while(1)  
  	{  
   		fx = rand()%H;  
      	fy = rand()%W;     
-  		if(GameMap[fx][fy] == ' ')  //²»ÄÜ³öÏÖÔÚÉßËùÕ¼ÓĞµÄÎ»ÖÃ  
+  		if(GameMap[fx][fy] == ' ')  //ä¸èƒ½å‡ºç°åœ¨è›‡æ‰€å æœ‰çš„ä½ç½®  
   		{   
    			GameMap[fx][fy] = Sfood;  
       		break;  
