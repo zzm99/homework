@@ -3,7 +3,7 @@
 
 ### 文件夹网页地址：
 
-[GitHub文件夹](https://github.com/zzm99/homework/tree/gh-pages/tanchishe1)
+[c文件下载处](https://github.com/zzm99/homework/tree/gh-pages/tanchishe1)
 
 ### 代码展示：
 
