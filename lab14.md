@@ -1,7 +1,7 @@
 ## 贪吃蛇 移动版和吃货版下载途径：
 
 
-### 文件夹网页地址：
+### 下载地址：
 
 [c文件下载处](https://github.com/zzm99/homework/tree/gh-pages/tanchishe1)
 
